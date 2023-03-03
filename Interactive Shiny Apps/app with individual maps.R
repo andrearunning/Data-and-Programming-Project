@@ -6,11 +6,11 @@ library(ggplot2)
 library(shiny)
 
 get_shootings_sf_chi_2022 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/Boundaries - Police Districts (current)")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/Boundaries - Police Districts (current)")
   chi_police_sf <- st_read(file.path(path, "geo_export_ba432f02-c067-4a0f-a392-521838fa9d07.shp"))
   chi_police_map <- st_as_sf(chi_police_sf)
   chi_police_map <- st_set_crs(chi_police_sf, 4326)
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/")
   shootings_chi_2022  <- read_csv(file.path(path, "shootings_chi_2022.csv"))
   shootings_chi_sf <- st_as_sf(shootings_chi_2022,  coords = c("Longitude", "Latitude"), crs = 4326)
   temp <- st_within(shootings_chi_sf, chi_police_map, sparse = FALSE)
@@ -21,11 +21,11 @@ get_shootings_sf_chi_2022 <- function() {
 }
 
 get_shootings_sf_chi_2019 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/Boundaries - Police Districts (current)")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/Boundaries - Police Districts (current)")
   chi_police_sf <- st_read(file.path(path, "geo_export_ba432f02-c067-4a0f-a392-521838fa9d07.shp"))
   chi_police_map <- st_as_sf(chi_police_sf)
   chi_police_map <- st_set_crs(chi_police_sf, 4326)
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/")
   shootings_chi_2019  <- read_csv(file.path(path, "shootings_chi_2019.csv"))
   shootings_chi_sf <- st_as_sf(shootings_chi_2019,  coords = c("Longitude", "Latitude"), crs = 4326)
   temp <- st_within(shootings_chi_sf, chi_police_map, sparse = FALSE)
@@ -36,11 +36,11 @@ get_shootings_sf_chi_2019 <- function() {
 }
 
 get_shootings_sf_nyc_2022 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/Police Precincts")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/Police Precincts")
   nyc_police_sf <- st_read(file.path(path, "geo_export_6e101e15-cda9-4946-8664-97da0938516d.shp"))
   nyc_police_map <- st_as_sf(nyc_police_sf)
   nyc_police_map <- st_set_crs(nyc_police_sf, 4326)
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/")
   shootings_nyc_2022 <- read_csv(file.path(path, "shootings_nyc_2022.csv"))
   shootings_sf <- st_as_sf(shootings_nyc_2022,  coords = c("Longitude", "Latitude"), crs = 4326)
   temp <- st_within(shootings_sf, nyc_police_map, sparse = FALSE)
@@ -50,11 +50,11 @@ get_shootings_sf_nyc_2022 <- function() {
   return(nyc_shootings_sf)
 }
 get_shootings_sf_nyc_2019 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/Police Precincts")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/Police Precincts")
   nyc_police_sf <- st_read(file.path(path, "geo_export_6e101e15-cda9-4946-8664-97da0938516d.shp"))
   nyc_police_map <- st_as_sf(nyc_police_sf)
   nyc_police_map <- st_set_crs(nyc_police_sf, 4326)
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/")
   shootings_nyc_2019 <- read_csv(file.path(path, "shootings_nyc_2019.csv"))
   shootings_sf <- st_as_sf(shootings_nyc_2019,  coords = c("Longitude", "Latitude"), crs = 4326)
   temp <- st_within(shootings_sf, nyc_police_map, sparse = FALSE)
@@ -65,11 +65,11 @@ get_shootings_sf_nyc_2019 <- function() {
 }
 
 get_shootings_sf_la_2022 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data/LAPD_Divisions/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data/LAPD_Divisions/")
   la_police_sf <- st_read(file.path(path, "LAPD_Divisions.shp"))
   la_police_map <- st_as_sf(la_police_sf)
   la_police_map <- st_set_crs(la_police_sf, 4326)
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data")
   shootings_la_2022 <- read_csv(file.path(path, "shootings_la_2022.csv"))
   shootings_sf <- st_as_sf(shootings_la_2022,  coords = c("LON", "LAT"), crs = 4326)
   temp <- st_within(shootings_sf, la_police_map, sparse = FALSE)
@@ -80,11 +80,11 @@ get_shootings_sf_la_2022 <- function() {
 }
 
 get_shootings_sf_la_2019 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data/LAPD_Divisions/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data/LAPD_Divisions/")
   la_police_sf <- st_read(file.path(path, "LAPD_Divisions.shp"))
   la_police_map <- st_as_sf(la_police_sf)
   la_police_map <- st_set_crs(la_police_sf, 4326)
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data")
   shootings_la_2019 <- read_csv(file.path(path, "shootings_la_2019.csv"))
   shootings_sf <- st_as_sf(shootings_la_2019,  coords = c("LON", "LAT"), crs = 4326)
   temp <- st_within(shootings_sf, la_police_map, sparse = FALSE)
@@ -96,14 +96,14 @@ get_shootings_sf_la_2019 <- function() {
 
 
 get_chicago_police_stations <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/")
   police_stations_chi  <- read_csv(file.path(path, "police_station_locations_chi.csv"))
   police_station_chi_sf<- st_as_sf(police_stations_chi,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(police_station_chi_sf)
 }
 
 get_nyc_police_stations <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/")
   police_stations_nyc  <- read_csv(file.path(path, "NYC police stations.csv"))
   police_stations_nyc_df <- as.data.frame.table(police_stations_nyc)
   police_stations_nyc_sf <- st_as_sf(police_stations_nyc, coords = c("Longitude", "Latitude"), crs = 4326)
@@ -111,48 +111,48 @@ get_nyc_police_stations <- function() {
 }
 
 get_la_police_stations <- function(){
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data")
   police_stations_la <- read_csv(file.path(path, "police_station_locations_la.csv"))
   police_stations_la_sf<- st_as_sf(police_stations_la,  coords = c("longitude", "latitude"), crs = 4326)
   return(police_stations_la_sf)
 }
 
 get_shooting_locations_chi_2022 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/")
   shootings_chi_2022  <- read_csv(file.path(path, "shootings_chi_2022.csv"))
   shootings_chi_sf <- st_as_sf(shootings_chi_2022,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(shootings_chi_sf)
 }
 
 get_shooting_locations_chi_2019 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/")
   shootings_chi_2022  <- read_csv(file.path(path, "shootings_chi_2019.csv"))
   shootings_chi_sf <- st_as_sf(shootings_chi_2022,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(shootings_chi_sf)
 }
 
 get_shooting_locations_nyc_2022 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/")
   shootings_nyc_2022 <- read_csv(file.path(path, "shootings_nyc_2022.csv"))
   shootings_sf <- st_as_sf(shootings_nyc_2022,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(shootings_sf)
 }
 get_shooting_locations_nyc_2019 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/")
   shootings_nyc_2019 <- read_csv(file.path(path, "shootings_nyc_2019.csv"))
   shootings_sf <- st_as_sf(shootings_nyc_2019,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(shootings_sf)
 }
 
 get_shooting_locations_la_2022 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data")
   shootings_la_2022 <- read_csv(file.path(path, "shootings_la_2022.csv"))
   shootings_sf <- st_as_sf(shootings_la_2022,  coords = c("LON", "LAT"), crs = 4326)
   return(shootings_sf)
 }
 
 get_shooting_locations_la_2019 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data")
   shootings_la_2019 <- read_csv(file.path(path, "shootings_la_2019.csv"))
   shootings_sf <- st_as_sf(shootings_la_2019,  coords = c("LON", "LAT"), crs = 4326)
   return(shootings_sf)

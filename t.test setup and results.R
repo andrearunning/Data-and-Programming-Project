@@ -9,13 +9,13 @@ library(ggpubr)
 #create Chicago distance data 
 #2022
 get_chicago_police_stations <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/")
   police_stations_chi  <- read_csv(file.path(path, "police_station_locations_chi.csv"))
   police_station_chi_sf<- st_as_sf(police_stations_chi,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(police_station_chi_sf)
 }
 get_shooting_locations_chi_2022 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/")
   shootings_chi_2022  <- read_csv(file.path(path, "shootings_chi_2022.csv"))
   shootings_chi_sf <- st_as_sf(shootings_chi_2022,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(shootings_chi_sf)
@@ -31,7 +31,7 @@ get_sf_with_distance_chi_2022 <- function() {
 shootings_with_distance_chi_2022 <- get_sf_with_distance_chi_2022()
 #2019
 get_shooting_locations_chi_2019 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/Chicago Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/Chicago Data/")
   shootings_chi_2019  <- read_csv(file.path(path, "shootings_chi_2019.csv"))
   shootings_chi_sf <- st_as_sf(shootings_chi_2019,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(shootings_chi_sf)
@@ -55,14 +55,14 @@ t.test(chicago_2019, chicago_2022, var.equal =  FALSE)
 #create nyc distance data 
 #2022
 get_nyc_police_stations <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/")
   police_stations_nyc  <- read_csv(file.path(path, "NYC police stations.csv"))
   police_stations_nyc_df <- as.data.frame.table(police_stations_nyc)
   police_stations_nyc_sf <- st_as_sf(police_stations_nyc, coords = c("Longitude", "Latitude"), crs = 4326)
   return(police_stations_nyc_sf)
 }
 get_shooting_locations_nyc_2022 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/")
   shootings_nyc_2022 <- read_csv(file.path(path, "shootings_nyc_2022.csv"))
   shootings_sf <- st_as_sf(shootings_nyc_2022,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(shootings_sf)
@@ -78,7 +78,7 @@ get_sf_with_distance_nyc_2022 <- function() {
 shootings_with_distance_nyc_2022 <- get_sf_with_distance_nyc_2022()
 #2019
 get_shooting_locations_nyc_2019 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/NYC Data/")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/NYC Data/")
   shootings_nyc_2019 <- read_csv(file.path(path, "shootings_nyc_2019.csv"))
   shootings_sf <- st_as_sf(shootings_nyc_2019,  coords = c("Longitude", "Latitude"), crs = 4326)
   return(shootings_sf)
@@ -101,13 +101,13 @@ t.test(nyc_2019, nyc_2022, var.equal =  FALSE)
 #create LA distance data
 #2022
 get_la_police_stations <- function(){
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data")
   police_stations_la <- read_csv(file.path(path, "police_station_locations_la.csv"))
   police_stations_la_sf<- st_as_sf(police_stations_la,  coords = c("longitude", "latitude"), crs = 4326)
   return(police_stations_la_sf)
 }
 get_shooting_locations_la_2022 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data")
   shootings_la_2022 <- read_csv(file.path(path, "shootings_la_2022.csv"))
   shootings_sf <- st_as_sf(shootings_la_2022,  coords = c("LON", "LAT"), crs = 4326)
   return(shootings_sf)
@@ -123,7 +123,7 @@ get_sf_with_distance_la_2022 <- function() {
 shootings_with_distance_la_2022 <- get_sf_with_distance_la_2022()
 #2019
 get_shooting_locations_la_2019 <- function() {
-  path <- ("~/Documents/GitHub/final-project-brenda-angula-andrea-running/Data/LA Data")
+  path <- ("~/Documents/GitHub/Data-and-Programming-Project/Data/LA Data")
   shootings_la_2019 <- read_csv(file.path(path, "shootings_la_2019.csv"))
   shootings_sf <- st_as_sf(shootings_la_2019,  coords = c("LON", "LAT"), crs = 4326)
   return(shootings_sf)
